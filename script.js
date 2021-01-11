@@ -3,7 +3,7 @@ let q = 'hid';
 
 if (storageAvailable('localStorage')) {
     getLibrary(myLibrary);
-    if (myLibrary.length != 0) {
+    if (myLibrary && myLibrary.length != 0) {
         myLibrary.forEach(book => showLibrary(book));
         let closeCard = document.querySelectorAll('.close2');
         closeCard.forEach((x) => {x.style.visibility = 'hidden';});
