@@ -2,11 +2,11 @@ let myLibrary = [];
 let q = 'hid';
 
 if (storageAvailable('localStorage')) {
-    if (myLibrary != null) {
-        getLibrary(myLibrary);
+    getLibrary(myLibrary);
+    if (myLibrary.length != 0) {
         myLibrary.forEach(book => showLibrary(book));
         let closeCard = document.querySelectorAll('.close2');
-        closeCard.forEach((x) => {x.style.visibility = 'hidden';})
+        closeCard.forEach((x) => {x.style.visibility = 'hidden';});
     }
 }
 function Book(title, author, genre, status) {
