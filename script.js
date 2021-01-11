@@ -3,11 +3,10 @@ let q = 'hid';
 
 if (storageAvailable('localStorage')) {
     getLibrary(myLibrary);
-    if (myLibrary && myLibrary.length != 0) {
-        myLibrary.forEach(book => showLibrary(book));
-        let closeCard = document.querySelectorAll('.close2');
-        closeCard.forEach((x) => {x.style.visibility = 'hidden';});
-    }
+    myLibrary && myLibrary.length != 0) 
+    myLibrary.forEach(book => showLibrary(book));
+    let closeCard = document.querySelectorAll('.close2');
+    closeCard.forEach((x) => {x.style.visibility = 'hidden';});
 }
 function Book(title, author, genre, status) {
     this.title = title;
@@ -230,7 +229,9 @@ function storageAvailable(type) {
 
 function getLibrary() {
     var currentLibrary = JSON.parse(localStorage.getItem("myLibrary"));
-    myLibrary = currentLibrary;
+    if (currentLibrary) {
+        myLibrary = currentLibrary;
+    }
 }
 
 
